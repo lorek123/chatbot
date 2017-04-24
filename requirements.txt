@@ -1,3 +1,4 @@
+rivescript
 requests
 wikipedia
 git+https://github.com/lorek123/passwordmeter.git
