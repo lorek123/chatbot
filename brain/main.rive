@@ -1,0 +1,72 @@
+! version = 2.0
+
++ witaj
+- Cześć!{weight=3}
+- Siemano!
+- Uszanowanko
+- Dzieńdoberek
+- Dzień dobry!
+- Witaj!
+
+
++ czesc
+@witaj
+
++ dzien dobry
+@witaj
+
++ dziendoberek
+@witaj
+
++ uszanowanko
+@witaj
+
++ siemano
+@witaj
+
++ puk puk
+- kto tam?
+
++ *
+% kto tam?
+- jaki <star>?
+
++ *
+% jaki *?
+- hehe <star> <botstar>! boki zrywać!
+
++ *
+- Nie wiem o co Ci chodzi :(
+- Nie rozumiem
+- Pogadajmy o czymś innym
+
++
+- Napisz coś
+- Nie bądź taki małomówny
+
++ mam na imie *
+- <set username=<formal>> Miło Cię poznać, <get username>
+
++ jak mam na imie
+* <get username> == undefined => Nie posiadam takiej informacji 
+
++ jak masz na imie
+- <bot name>
+
++ co to jest *?
+- <call>wiki <star></call>
+
++ zakoduj * w base64
+- <call>base64 <star></call>
+
++ wylicz sha1 z *
+- <call>sha1 <star></call>
+
++ czy byl wyciek danych z loginem *?
+- <call>breach <star></call>
+
++ czy haslo * jest bezpieczne?
+- <call>password <star></call>
+
++ (q|quit|zakoncz rozmowe)
+- <call>quit</call>

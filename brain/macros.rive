@@ -1,0 +1,39 @@
+> object wiki python
+    import wikipedia
+    wikipedia.set_lang("pl")
+    return wikipedia.summary("".join(args))
+< object
+
+> object base64 python
+    import base64 as b64
+    value = b64.b64encode(" ".join(args).encode("utf-8"))
+    return value.decode("utf-8")
+< object
+
+> object sha1 python
+    import hashlib
+    value = hashlib.sha1(" ".join(args).encode("utf-8")).hexdigest()
+    return value
+< object
+
+> object password python
+    import passwordmeter
+    strength, improvements = passwordmeter.test("".join(args))
+    result = "Twoje hasło uzyskało wynik " + str(strength) +"/1, zalecenia:\n"
+    for k,v in improvements.items():
+        result+="-" + v +"\n"
+    return result
+< object
+
+> object breach python
+    import requests
+    r = requests.get("https://haveibeenpwned.com/api/v2/breachedaccount/" + "".join(args))
+    if r.status_code == 404:
+        return "Nie znaleziono wycieków powiązanych z takim loginem"
+    elif r.status_code == 200:
+        return "Znaleziono informacje o wycieku, więcej informacji na stronie: https://haveibeenpwned.com/"
+< object
+
+> object quit python
+    quit()
+< object
